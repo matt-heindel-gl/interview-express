@@ -40,7 +40,3 @@ curl -X POST -H "Content-Type: application/json" \
   -d '{"name":"New Item","description":"Description"}' \
   http://localhost:3000/api/items
 ```
-
-## Interview Tasks
-
-See [TASKS.md](TASKS.md) for potential features the candidate can implement during the interview.
