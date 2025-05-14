@@ -43,4 +43,6 @@ curl -X POST -H "Content-Type: application/json" \
 
 ## Interview Tasks
 
-See [TASKS.md](TASKS.md) for potential features the candidate can implement during the interview.
+NOTE: ask the candidate to work off the `main` branch which does not have these prompts
+
+See [PROMPTS.md](PROMPTS.md) for potential features the candidate can implement during the interview.
