@@ -30,7 +30,20 @@ const updateDatabase = (id, data) => {
   });
 };
 
+/**
+ * Mock function that simulates a request that fails
+ * @returns {Promise} - Rejects after the delay
+ */
+const requestThatFails = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error("Request failed"));
+    }, 1000);
+  });
+};
+
 module.exports = {
   raiseEvent,
   updateDatabase,
+  requestThatFails,
 };

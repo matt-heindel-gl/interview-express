@@ -1,6 +1,6 @@
-# REST API Interview Challenge
+# To-Do List REST API
 
-A minimal Express REST API for coding interviews. This project serves as a starting point for candidates to demonstrate their skills by extending the API functionality.
+A lightweight Express REST API for managing a to-do list. This application provides a simple interface to create, read, update, and delete to-do items.
 
 ## Getting Started
 
@@ -19,24 +19,23 @@ The server runs at http://localhost:3000
 
 ## API Endpoints
 
-| Method | Endpoint       | Description       |
-| ------ | -------------- | ----------------- |
-| GET    | /              | Welcome message   |
-| GET    | /api/items     | Get all items     |
-| GET    | /api/items/:id | Get item by ID    |
-| POST   | /api/items     | Create a new item |
+| Method | Endpoint       | Description             |
+| ------ | -------------- | ----------------------- |
+| GET    | /api/items     | Get all to-do items     |
+| GET    | /api/items/:id | Get to-do item by ID    |
+| POST   | /api/items     | Create a new to-do item |
 
 ## Sample Requests
 
 ```bash
-# Get all items
+# Get all to-do items
 curl http://localhost:3000/api/items
 
-# Get item by ID
+# Get to-do item by ID
 curl http://localhost:3000/api/items/1
 
-# Create a new item
+# Create a new to-do item
 curl -X POST -H "Content-Type: application/json" \
-  -d '{"name":"New Item","description":"Description"}' \
+  -d '{"name":"Finish project","description":"Complete the final implementation"}' \
   http://localhost:3000/api/items
 ```
