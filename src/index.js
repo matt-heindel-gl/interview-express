@@ -6,23 +6,25 @@ const logger = require("./middleware/logger");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+/**
+ * Middleware
+ */
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger);
 
-// In-memory data store for the interview
+/**
+ * In-memory data store
+ */
 const items = [
   { id: 1, name: "Item 1", description: "This is the first item" },
   { id: 2, name: "Item 2", description: "This is the second item" },
 ];
 
-// Routes
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the Interview API" });
-});
-
+/**
+ * Routes
+ */
 // GET all items
 app.get("/api/items", (req, res) => {
   res.json(items);
@@ -58,7 +60,9 @@ app.post("/api/items", (req, res) => {
   res.status(201).json(newItem);
 });
 
-// Start the server
+/**
+ * Start the server
+ */
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
