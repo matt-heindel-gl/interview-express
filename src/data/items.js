@@ -1,8 +1,18 @@
 // In-memory data store
 const items = [
   { id: 1, name: "Item 1", description: "This is the first item" },
-  { id: 2, name: "Item 2", description: "This is the second item" },
-  { id: 3, name: "Item 3", description: "This is the third item" },
+  {
+    id: 2,
+    name: "Item 2",
+    description: "This is the second item",
+    tags: ["tag-A", "tag-B"],
+  },
+  {
+    id: 3,
+    name: "Item 3",
+    description: "This is the third item",
+    tags: ["tag-A"],
+  },
 ];
 
 /**
