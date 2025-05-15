@@ -1,13 +1,15 @@
 /**
  * Simple request logger middleware
  */
-const logger = (req, res, next) => {
+const logger = (request, response, next) => {
   const start = Date.now();
 
   // Log when the request completes
-  res.on("finish", () => {
+  response.on("finish", () => {
     const duration = Date.now() - start;
-    console.log(`${req.method} ${req.url} - ${res.statusCode} - ${duration}ms`);
+    console.log(
+      `${request.method} ${request.url} - ${response.statusCode} - ${duration}ms`
+    );
   });
 
   next();

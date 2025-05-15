@@ -26,28 +26,28 @@ const items = [
  * Routes
  */
 // GET all items
-app.get("/api/items", (req, res) => {
-  res.json(items);
+app.get("/api/items", async (request, response) => {
+  response.json(items);
 });
 
 // GET a single item by ID
-app.get("/api/items/:id", (req, res) => {
-  const id = parseInt(req.params.id);
+app.get("/api/items/:id", (request, response) => {
+  const id = parseInt(request.params.id);
   const item = items.find((item) => item.id === id);
 
   if (!item) {
-    return res.status(404).json({ message: "Item not found" });
+    return response.status(404).json({ message: "Item not found" });
   }
 
-  res.json(item);
+  response.json(item);
 });
 
 // POST a new item
-app.post("/api/items", (req, res) => {
-  const { name, description } = req.body;
+app.post("/api/items", (request, response) => {
+  const { name, description } = request.body;
 
   if (!name || !description) {
-    return res
+    return response
       .status(400)
       .json({ message: "Name and description are required" });
   }
@@ -57,7 +57,7 @@ app.post("/api/items", (req, res) => {
   const newItem = { id: newId, name, description };
 
   items.push(newItem);
-  res.status(201).json(newItem);
+  response.status(201).json(newItem);
 });
 
 /**
